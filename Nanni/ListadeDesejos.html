@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Desejos - Nanni?!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #000;
+    }
+
+    .navbar {
+      background-color: #1a237e;
+    }
+
+    .navbar-brand img {
+      width: 160px;
+      height: 60px;
+      margin-right: 10px;
+    }
+
+    .navbar-brand,
+    .nav-link,
+    .btn-outline-light {
+      color: #fff !important;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: white;
+    }
+
+    .container {
+      margin-top: 20px;
+    }
+
+    .wishlist-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    .wishlist-item img {
+      max-width: 100px;
+      height: auto;
+      margin-right: 20px;
+    }
+
+    .wishlist-item h5 {
+      margin: 0;
+    }
+
+    .btn-remove {
+      margin-left: auto;
+      background-color: #e57373;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .btn-remove:hover {
+      background-color: #ef5350;
+    }
+
+    .btn-buy {
+      margin-right: 10px;
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .btn-buy:hover {
+      background-color: #66bb6a;
+    }
+
+    footer {
+      background-color: #1a237e;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <div class="container">
+    <h1>Lista de Desejos</h1>
+
+    <div id="wishlist" class="wishlist"></div>
+    <button onclick="limparLista()" class="btn btn-danger">Limpar Lista de Desejos</button>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+
+    // Carregar o header
+    fetch('./Header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+
+    // Carregar o footer
+    fetch('./Footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      carregarListaDesejos();
+    });
+
+    function carregarListaDesejos() {
+      const wishlistContainer = document.getElementById('wishlist');
+      wishlistContainer.innerHTML = '';
+
+      // Recupera a lista de desejos do localStorage
+      let listaDesejos = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+      // Verifica se a lista está vazia
+      if (listaDesejos.length === 0) {
+        wishlistContainer.innerHTML = '<p>Sua lista de desejos está vazia.</p>';
+        return;
+      }
+
+      // Para cada jogo na lista de desejos, cria um elemento na página
+      listaDesejos.forEach(jogo => {
+        const wishlistItem = document.createElement('div');
+        wishlistItem.className = 'wishlist-item';
+
+        // Verifica se o link de compra está disponível
+        const comprarLink = jogo.comprarLink ? jogo.comprarLink : '#';
+
+        wishlistItem.innerHTML = `
+          <img src="${jogo.imagem}" alt="${jogo.nome}">
+          <h5>${jogo.nome}</h5>
+          <!-- Botão de comprar redireciona para a página de compra -->
+          <button class="btn-buy" onclick="comprarJogo('${comprarLink}')">Comprar jogo</button>
+          <!-- Botão de remover da lista de desejos -->
+          <button class="btn-remove" onclick="removerDaListaDesejos('${jogo.id}')">Remover</button>
+        `;
+
+        wishlistContainer.appendChild(wishlistItem);
+      });
+    }
+
+    function comprarJogo(link) {
+      if (link === '#') {
+        alert('Link de compra não disponível para este jogo.');
+      } else {
+        window.location.href = link;
+      }
+    }
+
+    function removerDaListaDesejos(gameId) {
+        if (confirm("Você realmente deseja remover este jogo da lista de desejos?")) {
+            let listaDesejos = JSON.parse(localStorage.getItem('wishlist')) || [];
+            listaDesejos = listaDesejos.filter(item => item.id !== gameId);
+            localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
+            carregarListaDesejos();
+        }
+    }
+
+    function limparLista() {
+      localStorage.removeItem('wishlist');
+      carregarListaDesejos(); // Recarrega a lista
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>

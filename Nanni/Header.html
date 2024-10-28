@@ -1,0 +1,33 @@
+<!-- header.html -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="img_icones/logo_nanni.png" alt="Nanni Logo" style="width: 160px; height: 60px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="form-inline mx-auto" action="/buscar" method="GET">
+        <input class="form-control mr-sm-2" type="search" name="jogo" placeholder="Buscar jogos" aria-label="Buscar">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/ListadeDesejos.html"> <!-- Corrigido para a raiz -->
+            <img src="img_icones/lista_de_desejos_branco.png" alt="Lista de Desejos" style="width: 20px;">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Carrinho.html"> <!-- Adicione uma barra inicial se Carrinho também estiver na raiz -->
+            <img src="img_icones/carrinho_branco.png" alt="Carrinho" style="width: 20px;">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

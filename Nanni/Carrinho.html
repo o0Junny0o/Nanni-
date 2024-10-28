@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho de Compras - Nanni?!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #000;
+    }
+
+    .navbar {
+      background-color: #1a237e;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #fff !important;
+    }
+
+    .container {
+      margin-top: 20px;
+    }
+
+    .highlight-price {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #1a237e;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    .btn-excluir {
+      background-color: #dc3545;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <div class="container">
+    <h2>Carrinho de Compras</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="produtos"></tbody>
+    </table>
+    <div id="total" class="highlight-price"></div>
+    <button class="btn btn-success" id="btn-finalizar">Finalizar Compra</button>
+    <button class="btn btn-primary" id="btn-continuar">Continuar Comprando</button>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    // Carregar o header
+    fetch('/Header.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao carregar o header');
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      })
+      .catch(error => console.error(error));
+
+    // Carregar o footer
+    fetch('/Footer.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao carregar o footer');
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      })
+      .catch(error => console.error(error));
+
+    // Recuperar os dados do carrinho
+    const params = new URLSearchParams(window.location.search);
+    const jogoId = params.get('id');
+    const jogoNome = params.get('nome');
+    const jogoTipo = params.get('tipo');
+    const jogoPreco = parseFloat(params.get('preco').replace('R$ ', '').replace('.', '').replace(',', '.'));
+
+    const produtosTabela = document.getElementById('produtos');
+    let total = 0;
+
+    // Carregar produtos do localStorage
+    carregarCarrinho();
+
+    // Adicionar produto ao carrinho
+    if (jogoId && jogoNome && jogoTipo && !isNaN(jogoPreco)) {
+      adicionarProduto(jogoNome, jogoTipo, jogoPreco);
+      salvarCarrinho(jogoNome, jogoTipo, jogoPreco); // Salva no localStorage
+    } else {
+      produtosTabela.innerHTML = `<tr><td colspan="4">Erro ao adicionar produto ao carrinho.</td></tr>`;
+    }
+
+    // Função para adicionar produto à tabela
+    function adicionarProduto(nome, tipo, preco) {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${nome}</td>
+        <td>${tipo}</td>
+        <td>R$ ${preco.toFixed(2)}</td>
+        <td><button class="btn btn-excluir" onclick="removerProduto(this, ${preco})">Excluir</button></td>
+      `;
+      produtosTabela.appendChild(row);
+      total += preco;
+      atualizarTotal();
+    }
+
+    // Função para remover produto
+    function removerProduto(button, preco) {
+      const row = button.closest('tr');
+      produtosTabela.removeChild(row);
+      total -= preco;
+      atualizarTotal();
+      removerDoCarrinho(row.cells[0].innerText); // Remove do localStorage
+    }
+
+    // Função para atualizar o total
+    function atualizarTotal() {
+      document.getElementById('total').innerHTML = `Total: R$ ${total.toFixed(2)}`;
+    }
+
+    // Função para salvar o carrinho no localStorage
+    function salvarCarrinho(nome, tipo, preco) {
+      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      carrinho.push({ nome, tipo, preco });
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    }
+
+    // Função para carregar o carrinho do localStorage
+    function carregarCarrinho() {
+      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      carrinho.forEach(item => {
+        adicionarProduto(item.nome, item.tipo, item.preco);
+      });
+    }
+
+    // Função para remover do carrinho
+    function removerDoCarrinho(nome) {
+      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      const novoCarrinho = carrinho.filter(item => item.nome !== nome);
+      localStorage.setItem('carrinho', JSON.stringify(novoCarrinho));
+    }
+
+    // Finalizar compra
+    document.getElementById('btn-finalizar').onclick = function() {
+      alert('Compra finalizada!'); // Aqui você pode adicionar lógica de finalização de compra
+      produtosTabela.innerHTML = ''; // Limpa a tabela
+      total = 0; // Zera o total
+      atualizarTotal(); // Atualiza o total
+      localStorage.removeItem('carrinho'); // Limpa o carrinho do localStorage
+    };
+
+    // Continuar comprando
+    document.getElementById('btn-continuar').onclick = function() {
+      window.location.href = 'index.html'; // Redireciona para a página inicial
+    };
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
