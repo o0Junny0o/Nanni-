@@ -90,7 +90,15 @@ app.get("/games/GTA%20V.html", (req, res) => {
     })
 })
 
-app.get('/')
+app.get('/Games/EA%20SPORTS%20FC%2024.html', (req, res) =>{
+    fs.readFile(path.join(__dirname, 'Games/EA%20SPORTS%20FC%2024.html'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
 
 /*
 
