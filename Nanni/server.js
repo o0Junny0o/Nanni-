@@ -80,8 +80,208 @@ app.get("/Carrinho.html", (req, res) => {
 
 */
 
-app.get("/games/GTA%20V.html", (req, res) => {
-    fs.readFile(path.join(__dirname, 'games/GTA5.html'), (err, data) => {
+app.get('/Games/GTA5.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/GTA5.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/EA_SPORTS_FC_24.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/EA_SPORTS_FC_24.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Super_Mario_Bros_Wonder.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/Super_Mario_Bros_Wonder.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Halo_Infinite.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/Halo_Infinite.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/God_of_War.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/God_of_War.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/The_Last_of_Us_Part_II.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/The_Last_of_Us_Part_II.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Red_Dead_Redemption_II.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/Red_Dead_Redemption_II.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Halo_5_Guardians.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/Halo_5_Guardians.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Forza_Horizon_4.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/Forza_Horizon_4.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Gears_5_Xbox_One.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/Gears_5_Xbox_One.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Sea_of_Thieves.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/Sea_of_Thieves.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Zelda_Breath_of_the_Wild.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/Zelda_Breath_of_the_Wild.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Animal_Crossing_New_Horizons.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, 'Games/Animal_Crossing_New_Horizons.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Mario_Kart_8_Deluxe.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/Games/Mario_Kart_8_Deluxe.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Super_Smash_Bros_Ultimate.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/Games/Super_Smash_Bros_Ultimate.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Spider_Man_Miles_Morales.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/Games/Spider_Man_Miles_Morales.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Demons_Souls.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/Games/Demons_Souls.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Returnal.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/Games/Returnal.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Ratchet_&_Clank_Rift_Apart.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/Games/Ratchet_&_Clank_Rift_Apart.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/Games/Forza_Horizon_5.html', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/Games/Forza_Horizon_5.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get("/Games/Gears_5_Xbox_Series.html", (req, res) => {
+    fs.readFile(path.join(__dirname, '/Games/Gears_5_Xbox_Series.html'), (err, data) => {
         if(err){
             res.status(500).send("500 - Erro interno do servidor!");
         } else {
@@ -90,8 +290,8 @@ app.get("/games/GTA%20V.html", (req, res) => {
     })
 })
 
-app.get('/Games/EA%20SPORTS%20FC%2024.html', (req, res) =>{
-    fs.readFile(path.join(__dirname, 'Games/EA%20SPORTS%20FC%2024.html'), (err, data)=>{
+app.get('/Games/Microsoft_Flight_Simulator.html', (req, res) =>{
+    fs.readFile(path.join(__dirname, '/Games/Microsoft_Flight_Simulator.html'), (err, data)=>{
         if(err){
             res.status(500).send("500 - Erro interno do servidor!");
         } else {
