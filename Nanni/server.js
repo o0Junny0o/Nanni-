@@ -73,6 +73,56 @@ app.get("/Carrinho.html", (req, res) => {
     })
 })
 
+app.get('/PS4.html', (req, res) => {
+    fs.readFile(path.join(__dirname, 'PS4.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    });
+});
+
+app.get('/PS5.html', (req, res) => {
+    fs.readFile(path.join(__dirname, 'PS5.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    });
+});
+
+app.get('/XboxOne.html', (req, res) => {
+    fs.readFile(path.join(__dirname, 'XboxOne.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    });
+});
+
+app.get('/XboxSeries.html', (req, res) => {
+    fs.readFile(path.join(__dirname, 'XboxSeries.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    });
+});
+
+app.get('/NintendoSwitch.html', (req, res) => {
+    fs.readFile(path.join(__dirname, 'NintendoSwitch.html'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    });
+});
+
 
 /*
 
