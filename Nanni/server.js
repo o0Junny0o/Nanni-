@@ -351,7 +351,7 @@ app.get('/img_icones/logo_nanni.png', (req, res) => {
         if(err){
             res.status(500).send("500 - Erro interno do servidor!");
         } else {
-            res.status(200).contentType('text/html').send(data);
+            res.status(200).contentType('image/png').send(data);
         }
     })
 });
@@ -361,7 +361,7 @@ app.get('/img_icones/carrinho_branco.png', (req, res) => {
         if(err){
             res.status(500).send("500 - Erro interno do servidor!");
         } else {
-            res.status(200).contentType('text/html').send(data);
+            res.status(200).contentType('image/png').send(data);
         }
     })
 });
@@ -371,7 +371,7 @@ app.get('/img_icones/lista_de_desejos_branco.png', (req, res) => {
         if(err){
             res.status(500).send("500 - Erro interno do servidor!");
         } else {
-            res.status(200).contentType('text/html').send(data);
+            res.status(200).contentType('image/png').send(data);
         }
     })
 });
@@ -381,7 +381,7 @@ app.get('/img_icones/lista_desejos.png', (req, res) => {
         if(err){
             res.status(500).send("500 - Erro interno do servidor!");
         } else {
-            res.status(200).contentType('text/html').send(data);
+            res.status(200).contentType('image/png').send(data);
         }
     })
 });
@@ -391,7 +391,7 @@ app.get('/img_icones/icone_lixeira.png', (req, res) => {
         if(err){
             res.status(500).send("500 - Erro interno do servidor!");
         } else {
-            res.status(200).contentType('text/html').send(data);
+            res.status(200).contentType('image/png').send(data);
         }
     })
 });
@@ -401,7 +401,7 @@ app.get('/img_icones/icone_carrinho.png', (req, res) => {
         if(err){
             res.status(500).send("500 - Erro interno do servidor!");
         } else {
-            res.status(200).contentType('text/html').send(data);
+            res.status(200).contentType('image/png').send(data);
         }
     })
 });
