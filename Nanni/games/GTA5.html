@@ -218,7 +218,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'GTA_V', nome: 'Grand Theft Auto V', imagem: '../jogos_img/Capa_GTA-V_PS4.jpeg', link: '/Games/GTA_V.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'GTA_V', nome: 'Grand Theft Auto V', imagem: '../jogos_img/Capa_GTA-V_PS4.jpeg', link: '/Games/GTA5.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="GTA_V" data-nome="Grand Theft Auto V" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -330,7 +330,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/GTA V.html'; // Altere para o link de compra correto
+        jogo.comprarLink = '/Games/GTA5.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);
