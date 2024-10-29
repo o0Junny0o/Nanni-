@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/PS5/PS5.html">PS5</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../PS5.html">PS5</a></li>
         <li class="breadcrumb-item active" aria-current="page">EA SPORTS FC 24</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - FC 24.png" alt="Capa FC 24">
+        <img src="../jogos_img/Capa_FC24.png" alt="Capa FC 24">
       </div>
       <div class="game-info">
         <h2>EA SPORTS FC 24</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'EAFC24', nome: 'EA SPORTS FC 24', imagem: './IMGS - JOGOS/Capa - FC 24.png', link: './Games/EA SPORTS FC 24.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'EAFC24', nome: 'EA SPORTS FC 24', imagem: '../jogos_img/Capa_FC24.png', link: './Games/EA_SPORTS_FC_24.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="EA_SPORTS_FC_24" data-nome="EA SPORTS FC 24" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner EA SPORTS FC24.jpg" alt="Banner EA SPORTS FC24">
+      <img src="../Banners/Banner_EA_SPORTSFC24.jpg" alt="Banner EA SPORTS FC24">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -322,7 +322,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/EA SPORTS FC 24.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/EA_SPORTS_FC_24.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

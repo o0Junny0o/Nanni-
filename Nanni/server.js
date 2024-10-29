@@ -150,16 +150,6 @@ app.get('/Games/EA_SPORTS_FC_24.html', (req, res)=>{
     })
 });
 
-app.get('/Games/Super_Mario_Bros_Wonder.html', (req, res)=>{
-    fs.readFile(path.join(__dirname, 'Games/Super_Mario_Bros_Wonder.html'), (err, data) => {
-        if(err){
-            res.status(500).send("500 - Erro interno do servidor!");
-        } else {
-            res.status(200).contentType('text/html').send(data);
-        }
-    })
-});
-
 app.get('/Games/Halo_Infinite.html', (req, res)=>{
     fs.readFile(path.join(__dirname, 'Games/Halo_Infinite.html'), (err, data) => {
         if(err){
@@ -386,6 +376,36 @@ app.get('/img_icones/lista_de_desejos_branco.png', (req, res) => {
     })
 });
 
+app.get('/img_icones/lista_desejos.png', (req, res) => {
+    fs.readFile(path.join(__dirname, 'img_icones/lista_desejos.png'), (err, data) =>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/img_icones/icone_lixeira.png', (req, res) => {
+    fs.readFile(path.join(__dirname, 'img_icones/icone_lixeira.png'), (err, data) =>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
+app.get('/img_icones/icone_carrinho.png', (req, res) => {
+    fs.readFile(path.join(__dirname, 'img_icones/icone_carrinho.png'), (err, data) =>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('text/html').send(data);
+        }
+    })
+});
+
 
 /* 
 
@@ -539,16 +559,6 @@ app.get('/jogos_img/Capa_HaloInfinite.jpeg', (req, res) => {
     });
 });
 
-app.get('/jogos_img/', (req, res) => {
-    fs.readFile(path.join(__dirname, 'jogos_img/'), (err, data) => {
-        if(err){
-            res.status(500).send("500 - Erro interno do servidor!");
-        } else {
-            res.status(200).contentType('/image').send(data);
-        }
-    });
-});
-
 app.get('/jogos_img/Capa_MarioKart_8_Deluxe.jpg', (req, res) => {
     fs.readFile(path.join(__dirname, 'jogos_img/Capa_MarioKart_8_Deluxe.jpg'), (err, data) => {
         if(err){
@@ -589,16 +599,6 @@ app.get('/jogos_img/Capa_Red_Dead_Redemption_II.jpeg', (req, res) => {
     });
 });
 
-app.get('/jogos_img/', (req, res) => {
-    fs.readFile(path.join(__dirname, 'jogos_img/'), (err, data) => {
-        if(err){
-            res.status(500).send("500 - Erro interno do servidor!");
-        } else {
-            res.status(200).contentType('/image').send(data);
-        }
-    });
-});
-
 app.get('/jogos_img/Capa_Returnal.jpg', (req, res) => {
     fs.readFile(path.join(__dirname, 'jogos_img/Capa_Returnal.jpg'), (err, data) => {
         if(err){
@@ -625,16 +625,6 @@ app.get('/jogos_img/Capa_Spiderman_Miles_Morales.jpg', (req, res) => {
             res.status(500).send("500 - Erro interno do servidor!");
         } else {
             res.status(200).contentType('jpg/image').send(data);
-        }
-    });
-});
-
-app.get('/jogos_img/Capa_Super_Mario_Bros_Wonder.jpeg', (req, res) => {
-    fs.readFile(path.join(__dirname, 'jogos_img/Capa_Super_Mario_Bros_Wonder.jpeg'), (err, data) => {
-        if(err){
-            res.status(500).send("500 - Erro interno do servidor!");
-        } else {
-            res.status(200).contentType('jpeg/image').send(data);
         }
     });
 });
@@ -681,6 +671,224 @@ app.get('/jogos_img/Capa_Zelda_Breath_of_the_Wild.jpeg', (req, res) => {
 
 app.get('/jogos_img/Capa_Zelda_Breath_of_the_Wild.jpg', (req, res) => {
     fs.readFile(path.join(__dirname, 'jogos_img/Capa_Zelda_Breath_of_the_Wild.jpg'), (err, data) => {
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+/*
+
+    IMAGENS BANNERS
+
+*/
+
+app.get('/banners/Banner_Animal_Crossing.jpg', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Animal_Crossing.jpg'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+
+app.get('/banners/Banner_Demon_Souls.webp', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Demon_Souls.webp'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_EA_SPORTSFC24.jpg', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_EA_SPORTSFC24.jpg'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Flight_Simulator.jpg', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Flight_Simulator.jpg'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Forza_4.jpg', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Forza_4.jpg'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Forza_5.png', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Forza_5.png'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Gears_5_xone.png', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Gears_5_xone.png'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Gears_5_xseries.png', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Gears_5_xseries.png'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_GTAV.png', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_GTAV.png'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Halo_5_Guardians.jpg', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Halo_5_Guardians.jpg'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Halo_infinite.jpg', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Halo_infinite.jpg'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Mario_kart.jpg', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Mario_kart.jpg'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Miles_Morales.jpg', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Miles_Morales.jpg'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Ratchet_and_Clank.webp', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Ratchet_and_Clank.webp'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_RDRII.webp', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_RDRII.webp'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Returnal.webp', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Returnal.webp'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Sea_of_Thieves.png', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Sea_of_Thieves.png'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_super_smash_bros.webp', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_super_smash_bros.webp'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).send(data);
+        }
+    });
+});
+
+
+app.get('/banners/Banner_The_Last_Of_Us_part_2.webp', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_The_Last_Of_Us_part_2.webp'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).send(data);
+        }
+    });
+});
+
+app.get('/banners/Banner_Zelda.jpeg', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/Banner_Zelda.jpeg'), (err, data)=>{
+        if(err){
+            res.status(500).send("500 - Erro interno do servidor!");
+        } else {
+            res.status(200).contentType('jpg/image').send(data);
+        }
+    });
+});
+
+app.get('/banners/God_of_War.png', (req, res)=>{
+    fs.readFile(path.join(__dirname, '/banners/God_of_War.png'), (err, data)=>{
         if(err){
             res.status(500).send("500 - Erro interno do servidor!");
         } else {

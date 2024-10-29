@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../PS4.html">PS4</a></li>
         <li class="breadcrumb-item active" aria-current="page">The Last of Us Part II</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - The Last of Us Part II.jpeg" alt="Capa The Last of Us Part II">
+        <img src="../jogos_img/Capa_The_Last_of_Us_Part_II.jpeg" alt="Capa The Last of Us Part II">
       </div>
       <div class="game-info">
         <h2>The Last of Us Part II</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'TLOU2', nome: 'The Last of Us Part II', imagem: '/IMGS - JOGOS/Capa - The Last of Us Part II.jpeg', link: '/Games/The Last of Us Part II.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'TLOU2', nome: 'The Last of Us Part II', imagem: '../jogos_img/Capa_The_Last_of_Us_Part_II.jpeg', link: '/Games/The_Last_of_Us_Part_II.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="THE_LAST_OF_US_PART_II" data-nome="The Last of Us Part II" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner The Last Of Us part 2.webp" alt="Banner The Last of Us Part II">
+      <img src="/Banners/Banner_The_Last_Of_Us_part_2.webp" alt="Banner The Last of Us Part II">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -323,7 +323,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/The Last of Us Part II.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/The_Last_of_Us_Part_II.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

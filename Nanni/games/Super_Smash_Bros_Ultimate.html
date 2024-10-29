@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/Nintendo Switch/NintendoSwitch.html">Nintendo Switch</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../NintendoSwitch.html">Nintendo Switch</a></li>
         <li class="breadcrumb-item active" aria-current="page">Super Smash Bros Ultimate</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Super Smash Bros Ultimate.jpg" alt="Capa Smash Bros Ultimate">
+        <img src="../jogos_img/Capa_Super_Smash_Bros_Ultimate.jpg" alt="Capa Smash Bros Ultimate">
       </div>
       <div class="game-info">
         <h2>Super Smash Bros Ultimate</h2>
@@ -213,7 +213,7 @@
             <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
           </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'SmashBrosUltimate', nome: 'Super Smash Bros Ultimate', imagem: './IMGS - JOGOS/Capa - Smash Bros Ultimate.jpg', link: './Games/Super Smash Bros Ultimate.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'SmashBrosUltimate', nome: 'Super Smash Bros Ultimate', imagem: '../jogos_img/Capa_Super_Smash_Bros_Ultimate.jpg', link: './Games/Super_Smash_Bros_Ultimate.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="SUPER_SMASH_BROS_ULTIMATE" data-nome="Super Smash Bros Ultimate" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner super smash bros.webp" alt="Banner Smash Bros Ultimate">
+      <img src="/Banners/Banner_super_smash_bros.webp" alt="Banner Smash Bros Ultimate">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -321,7 +321,7 @@ fetch('/Header.html')
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Super Smash Bros Ultimate.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Super_Smash_Bros_Ultimate.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

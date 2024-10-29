@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/Nintendo Switch/NintendoSwitch.html">Nintendo Switch</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../NintendoSwitch.html">Nintendo Switch</a></li>
         <li class="breadcrumb-item active" aria-current="page">Animal Crossing: New Horizons</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Animal Crossing New Horizons.jpg" alt="Capa Animal Crossing: New Horizons">
+        <img src="../jogos_img/Capa_Animal_Crossing_New_Horizons.jpg" alt="Capa Animal Crossing: New Horizons">
       </div>
       <div class="game-info">
         <h2>Animal Crossing: New Horizons</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'AnimalCrossingNewHorizons', nome: 'Animal Crossing: New Horizons', imagem: './IMGS - JOGOS/Capa - Animal Crossing New Horizons.jpg', link: './Games/Animal Crossing New Horizons.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'AnimalCrossingNewHorizons', nome: 'Animal Crossing: New Horizons', imagem: '../jogos_img/Capa_Animal_Crossing_New_Horizons.jpg', link: './Games/Animal_Crossing_New_Horizons.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="ANIMAL_CROSSING_NEW_HORIZONS" data-nome="Animal Crossing: New Horizons" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Animal Crossing.jpg" alt="Banner Animal Crossing: New Horizons">
+      <img src="../Banners/Banner_Animal_Crossing.jpg" alt="Banner Animal Crossing: New Horizons">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -321,7 +321,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Animal Crossing New Horizons.html'; // Altere para o link de compra correto
+        jogo.comprarLink = '../Games/Animal_Crossing_New_Horizons.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

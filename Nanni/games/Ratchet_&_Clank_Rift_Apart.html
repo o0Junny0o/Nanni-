@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/PS5/PS5.html">PS5</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../PS5.html">PS5</a></li>
         <li class="breadcrumb-item active" aria-current="page">Ratchet & Clank: Rift Apart</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Ratchet & clank rift apart.jpg" alt="Capa Ratchet & Clank: Rift Apart">
+        <img src="../jogos_img/Capa_Ratchet_&_clank_rift_apart.jpg" alt="Capa Ratchet & Clank: Rift Apart">
       </div>
       <div class="game-info">
         <h2>Ratchet & Clank: Rift Apart</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'RatchetAndClankRiftApart', nome: 'Ratchet & Clank: Rift Apart', imagem: './IMGS - JOGOS/Capa - Ratchet & clank rift apart.jpg', link: './Games/Ratchet & Clank Rift Apart.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'RatchetAndClankRiftApart', nome: 'Ratchet & Clank: Rift Apart', imagem: '../jogos_img/Capa_Ratchet_&_clank_rift_apart.jpg', link: './Games/Ratchet_&_Clank_Rift_Apart.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="RATCHET_AND_CLANK_RIFT_APART" data-nome="Ratchet & Clank: Rift Apart" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Ratchet and Clank.webp" alt="Banner Ratchet & Clank: Rift Apart">
+      <img src="/Banners/Banner_Ratchet_and_Clank.webp" alt="Banner Ratchet & Clank: Rift Apart">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -321,7 +321,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Ratchet & Clank Rift Apart.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Ratchet_&_Clank_Rift_Apart.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

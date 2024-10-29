@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/Xbox/Xbox.html">Xbox</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../Xbox.html">Xbox</a></li>
         <li class="breadcrumb-item active" aria-current="page">Gears 5</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Gears 5 Xbox One.jpg" alt="Capa Gears 5">
+        <img src="../jogos_img/Capa_Gears_5_XboxOne.jpg" alt="Capa Gears 5">
       </div>
       <div class="game-info">
         <h2>Gears 5</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'Gears5', nome: 'Gears 5', imagem: './IMGS - JOGOS/Capa - Gears 5 Xbox One.jpg', link: './Games/Gears 5 Xbox One.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'Gears5', nome: 'Gears 5', imagem: '../jogos_img/Capa_Gears_5_XboxOne.jpg', link: './Games/Gears_5_Xbox_One.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="GEARS_5" data-nome="Gears 5" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Gears 5 xone.png" alt="Banner Gears 5">
+      <img src="/Banners/Banner_Gears_5_xone.png" alt="Banner Gears 5">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -321,7 +321,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Gears 5 Xbox One.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Gears_5_Xbox_One.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

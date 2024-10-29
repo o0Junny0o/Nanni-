@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../PS4.html">PS4</a></li>
         <li class="breadcrumb-item active" aria-current="page">Red Dead Redemption II</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Red Dead Redemption II.jpeg" alt="Capa Red Dead Redemption II">
+        <img src="../jogos_img/Capa_Red_Dead_Redemption_II.jpeg" alt="Capa Red Dead Redemption II">
       </div>
       <div class="game-info">
         <h2>Red Dead Redemption II</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'RDR2', nome: 'Red Dead Redemption II', imagem: '/IMGS - JOGOS/Capa - Red Dead Redemption II.jpg', link: '/Games/Red Dead Redemption II.html'})">
+          <img src="../img_icones/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'RDR2', nome: 'Red Dead Redemption II', imagem: '../jogos_img/Capa_Red_Dead_Redemption_II.jpeg', link: '/Games/Red_Dead_Redemption_II.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="RED_DEAD_REDEMPTION_II" data-nome="Red Dead Redemption II" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner RDRII.webp" alt="Banner Red Dead Redemption II">
+      <img src="/Banners/Banner_RDRII.webp" alt="Banner Red Dead Redemption II">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -323,7 +323,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Red Dead Redemption II.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Red_Dead_Redemption_II.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/PS5/PS5.html">PS5</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../PS5.html">PS5</a></li>
         <li class="breadcrumb-item active" aria-current="page">Marvels Spiderman-Man Miles Morales</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Spiderman Miles Morales.jpg" alt="Capa Spider-Man: Miles Morales">
+        <img src="../jogos_img/Capa_Spiderman_Miles_Morales.jpg" alt="Capa Spider-Man: Miles Morales">
       </div>
       <div class="game-info">
         <h2>Spider-Man: Miles Morales</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'SpiderManMM', nome: 'Spider-Man: Miles Morales', imagem: './IMGS - JOGOS/Capa - Spiderman Miles Morales.png', link: './Games/Spider Man Miles Morales.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'SpiderManMM', nome: 'Spider-Man: Miles Morales', imagem: '../jogos_img/Capa_Spiderman_Miles_Morales.jpg', link: './Games/Spider_Man_Miles_Morales.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="SPIDERMAN_MM" data-nome="Spider-Man: Miles Morales" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Miles Morales.jpg" alt="Banner Spider-Man: Miles Morales">
+      <img src="/Banners/Banner_Miles_Morales.jpg" alt="Banner Spider-Man: Miles Morales">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -321,7 +321,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Spider Man Miles Morales.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Spider_Man_Miles_Morales.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

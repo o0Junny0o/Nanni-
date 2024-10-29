@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/PS5/PS5.html">PS5</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../PS5.html">PS5</a></li>
         <li class="breadcrumb-item active" aria-current="page">Demon's Souls</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Demons Souls.jpg" alt="Capa Demon's Souls">
+        <img src="../jogos_img/Capa_Demons_Souls.jpg" alt="Capa Demon's Souls">
       </div>
       <div class="game-info">
         <h2>Demon's Souls</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'DemonsSouls', nome: 'Demons Souls', imagem: './IMGS - JOGOS/Capa - Demons Souls.jpg', link: './Games/Demons Souls.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'DemonsSouls', nome: 'Demons Souls', imagem: '../jogos_img/Capa_Demons_Souls.jpg', link: './Games/Demons_Souls.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="DEMONS_SOULS" data-nome="Demon's Souls" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Demon Souls.webp" alt="Banner Demon's Souls">
+      <img src="/Banners/Banner_Demon_Souls.webp" alt="Banner Demon's Souls">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -321,7 +321,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Demons Souls.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Demons_Souls.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

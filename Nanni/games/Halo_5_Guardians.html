@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/Xbox One/Xbox One.html">Xbox</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../XboxOne.html">Xbox</a></li>
         <li class="breadcrumb-item active" aria-current="page">Halo 5: Guardians</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Halo 5 Guardians.jpeg" alt="Capa Halo 5: Guardians">
+        <img src="../jogos_img/Capa_Halo_5_Guardians.jpeg" alt="Capa Halo 5: Guardians">
       </div>
       <div class="game-info">
         <h2>Halo 5: Guardians</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'Halo5Guardians', nome: 'Halo 5: Guardians', imagem: './IMGS - JOGOS/Capa - Halo 5 Guardians.jpeg', link: './Games/Halo 5 Guardians.html'})">
+          <img src="../jogos_img/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'Halo5Guardians', nome: 'Halo 5: Guardians', imagem: '../jogos_img/Capa_Halo_5_Guardians.jpeg', link: './Games/Halo_5_Guardians.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="HALO_5_GUARDIANS" data-nome="Halo 5: Guardians" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Halo 5 Guardians.webp" alt="Banner Halo 5: Guardians">
+      <img src="/Banners/Banner_Halo_5_Guardians.jpg" alt="Banner Halo 5: Guardians">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -321,7 +321,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Halo 5 Guardians.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Halo_5_Guardians.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

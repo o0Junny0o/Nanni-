@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/Xbox One/Xbox One.html">Xbox</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../XboxOne.html">Xbox</a></li>
         <li class="breadcrumb-item active" aria-current="page">Forza Horizon 4</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Forza Horizon 4.jpg" alt="Capa Forza Horizon 4">
+        <img src="../jogos_img/Capa_ForzaHorizon_4.jpg" alt="Capa Forza Horizon 4">
       </div>
       <div class="game-info">
         <h2>Forza Horizon 4</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'ForzaHorizon4', nome: 'Forza Horizon 4', imagem: './IMGS - JOGOS/Capa - Forza Horizon 4.jpg', link: './Games/Forza Horizon 4.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'ForzaHorizon4', nome: 'Forza Horizon 4', imagem: '../jogos_img/Capa_ForzaHorizon_4.jpg', link: './Games/Forza_Horizon_4.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="FORZA_HORIZON_4" data-nome="Forza Horizon 4" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Forza 4.jpg" alt="Banner Forza Horizon 4">
+      <img src="/Banners/Banner_Forza_4.jpg" alt="Banner Forza Horizon 4">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -321,7 +321,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Forza Horizon 4.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Forza_Horizon_4.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

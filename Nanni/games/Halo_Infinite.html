@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/Xbox Series/XboxSeries.html">Xbox</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../XboxSeries.html">Xbox</a></li>
         <li class="breadcrumb-item active" aria-current="page">Halo Infinite</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Halo Infinite.jpeg" alt="Capa Halo Infinite">
+        <img src="../jogos_img/Capa_HaloInfinite.jpeg" alt="Capa Halo Infinite">
       </div>
       <div class="game-info">
         <h2>Halo Infinite</h2>
@@ -213,7 +213,7 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'HALO_INFINITE', nome: 'Halo Infinite', imagem: '/IMGS - JOGOS/Capa - Halo Infinite.jpg', link: '/Games/Halo Infinite.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'HALO_INFINITE', nome: 'Halo Infinite', imagem: '../jogos_img/Capa_HaloInfinite.jpeg', link: '/Games/Halo_Infinite.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="HALO_INFINITE" data-nome="Halo Infinite" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Halo infinite.jpg" alt="Banner Halo Infinite">
+      <img src="/Banners/Banner_Halo_infinite.jpg" alt="Banner Halo Infinite">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -321,7 +321,7 @@ function adicionarÀListaDeDesejos(jogo) {
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Halo Infinite.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Halo_Infinite.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

@@ -189,15 +189,15 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/Nintendo Switch/NintendoSwitch.html">Nintendo Switch</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="../NintendoSwitch.html">Nintendo Switch</a></li>
         <li class="breadcrumb-item active" aria-current="page">Zelda: Breath of the Wild</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Zelda Breath of the Wild.jpg" alt="Capa Zelda Breath of the Wild">
+        <img src="../jogos_img/Capa_Zelda_Breath_of_the_Wild.jpg" alt="Capa Zelda Breath of the Wild">
       </div>
       <div class="game-info">
         <h2>Zelda: Breath of the Wild</h2>
@@ -213,7 +213,7 @@
             <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
           </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'ZeldaBreathOfTheWild', nome: 'Zelda: Breath of the Wild', imagem: './IMGS - JOGOS/Capa - Zelda Breath of the Wild.jpg', link: './Games/Zelda Breath of the Wild.html'})">
+          <img src="../img_icones/lista_desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'ZeldaBreathOfTheWild', nome: 'Zelda: Breath of the Wild', imagem: '../jogos_img/Capa_Zelda_Breath_of_the_Wild.jpg', link: './Games/Zelda_Breath_of_the_Wild.html'})">
         </div>
         <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="ZELDA_BREATH_OF_THE_WILD" data-nome="Zelda: Breath of the Wild" data-tipo="" data-preco="">Comprar</button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Zelda.jpeg" alt="Banner Zelda Breath of the Wild">
+      <img src="/Banners/Banner_Zelda.jpeg" alt="Banner Zelda Breath of the Wild">
     </div>
 
     <!-- Detalhes do Produto -->
@@ -321,7 +321,7 @@ fetch('/Header.html')
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Super Smash Bros Ultimate.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Zelda_Breath_of_the_Wild.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);
