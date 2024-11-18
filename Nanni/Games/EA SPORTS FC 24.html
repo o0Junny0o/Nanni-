@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Returnal - Nanni?</title>
+  <title>EA SPORTS FC 24 - Nanni?!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -191,17 +191,17 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
         <li class="breadcrumb-item"><a href="/PS5/PS5.html">PS5</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Returnal</li>
+        <li class="breadcrumb-item active" aria-current="page">EA SPORTS FC 24</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Returnal.jpg" alt="Capa Returnal">
+        <img src="/IMGS - JOGOS/Capa - FC 24.png" alt="Capa FC 24">
       </div>
       <div class="game-info">
-        <h2>Returnal</h2>
-        <p>Desenvolvedora: Housemarque</p>
+        <h2>EA SPORTS FC 24</h2>
+        <p>Desenvolvedora: EA Sports</p>
         <div class="license-options">
           <p>Tipo de Licença:</p>
           <button class="btn" id="primaria" onclick="mostrarDetalhes('primaria')">PS5 Primária</button>
@@ -213,9 +213,9 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'Returnal', nome: 'Returnal', imagem: './IMGS - JOGOS/Capa - Returnal.jpg', link: './Games/Returnal.html'})">
+          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'EAFC24', nome: 'EA SPORTS FC 24', imagem: './IMGS - JOGOS/Capa - FC 24.png', link: './Games/EA SPORTS FC 24.html'})">
         </div>
-        <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="RETURNAL" data-nome="Returnal" data-tipo="" data-preco="">Comprar</button>
+        <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="EA_SPORTS_FC_24" data-nome="EA SPORTS FC 24" data-tipo="" data-preco="">Comprar</button>
       </div>
     </div>
 
@@ -223,22 +223,23 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Returnal.webp" alt="Banner Returnal">
+      <img src="/Banners/Banner EA SPORTS FC24.jpg" alt="Banner EA SPORTS FC24">
     </div>
 
     <!-- Detalhes do Produto -->
     <div class="product-details">
       <h3>Detalhes do Produto</h3>
-      <h5>SOBRE RETURNAL</h5>
-      <p>Em Returnal, lute pela sobrevivência em um planeta hostil enquanto enfrenta inimigos brutais e ambientes em constante mudança. Com um sistema de combate rápido e imprevisível, a cada morte você volta ao início, em uma experiência roguelike desafiadora.</p>
+      <h5>SOBRE EA SPORTS FC™ 24</h5>
+      <p>O EA SPORTS FC™ 24 é uma nova era para o Jogo de Todo Mundo: mais de 19.000 atletas com licença completa, mais de 700 times e mais de 30 ligas, tudo isso na experiência de futebol mais autêntica já criada.
+        Sinta o jogo de perto com três tecnologias de ponta que proporcionam um realismo inigualável em todas as partidas: HyperMotionV**, PlayStyles otimizada pela Opta, e uma Frostbite™ Engine revolucionada.</p>
 
       <h4>ESPECIFICAÇÕES TÉCNICAS:</h4>
       <ul>
         <li>Plataforma: Playstation 5</li>
-        <li>Gênero: Ação/Roguelike</li>
-        <li>Produtora: Housemarque</li>
+        <li>Gênero: Esportes</li>
+        <li>Produtora: EA Play</li>
         <li>Idioma: Português</li>
-        <li>Data de Lançamento: 30/04/2021</li>
+        <li>Data de Lançamento: 22/9/2024</li>
       </ul>
     </div>
   </div>
@@ -272,7 +273,7 @@
       })
       .catch(error => console.error(error));
 
-      const detalhesLicenca = {
+    const detalhesLicenca = {
       primaria: {
         price: 'R$ 99,99',
         installments: 'Até 3x de R$ 33,33 sem juros ou R$ 98,99 via Pix'
@@ -321,7 +322,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Returnal.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/EA SPORTS FC 24.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

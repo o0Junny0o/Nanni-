@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Returnal - Nanni?</title>
+  <title>Demon's Souls - Nanni?</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -191,17 +191,17 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
         <li class="breadcrumb-item"><a href="/PS5/PS5.html">PS5</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Returnal</li>
+        <li class="breadcrumb-item active" aria-current="page">Demon's Souls</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Returnal.jpg" alt="Capa Returnal">
+        <img src="/IMGS - JOGOS/Capa - Demons Souls.jpg" alt="Capa Demon's Souls">
       </div>
       <div class="game-info">
-        <h2>Returnal</h2>
-        <p>Desenvolvedora: Housemarque</p>
+        <h2>Demon's Souls</h2>
+        <p>Desenvolvedora: Bluepoint Games</p>
         <div class="license-options">
           <p>Tipo de Licença:</p>
           <button class="btn" id="primaria" onclick="mostrarDetalhes('primaria')">PS5 Primária</button>
@@ -213,9 +213,9 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'Returnal', nome: 'Returnal', imagem: './IMGS - JOGOS/Capa - Returnal.jpg', link: './Games/Returnal.html'})">
+          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'DemonsSouls', nome: 'Demons Souls', imagem: './IMGS - JOGOS/Capa - Demons Souls.jpg', link: './Games/Demons Souls.html'})">
         </div>
-        <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="RETURNAL" data-nome="Returnal" data-tipo="" data-preco="">Comprar</button>
+        <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="DEMONS_SOULS" data-nome="Demon's Souls" data-tipo="" data-preco="">Comprar</button>
       </div>
     </div>
 
@@ -223,22 +223,22 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Returnal.webp" alt="Banner Returnal">
+      <img src="/Banners/Banner Demon Souls.webp" alt="Banner Demon's Souls">
     </div>
 
     <!-- Detalhes do Produto -->
     <div class="product-details">
       <h3>Detalhes do Produto</h3>
-      <h5>SOBRE RETURNAL</h5>
-      <p>Em Returnal, lute pela sobrevivência em um planeta hostil enquanto enfrenta inimigos brutais e ambientes em constante mudança. Com um sistema de combate rápido e imprevisível, a cada morte você volta ao início, em uma experiência roguelike desafiadora.</p>
+      <h5>SOBRE DEMON'S SOULS</h5>
+      <p>Redescubra o jogo que definiu um gênero. Totalmente recriado com maestria, esta releitura do clássico Demon's Souls proporciona uma nova geração de jogadores uma experiência intensa e imersiva, onde cada batalha é uma verdadeira prova de força e habilidade.</p>
 
       <h4>ESPECIFICAÇÕES TÉCNICAS:</h4>
       <ul>
         <li>Plataforma: Playstation 5</li>
-        <li>Gênero: Ação/Roguelike</li>
-        <li>Produtora: Housemarque</li>
+        <li>Gênero: RPG/Ação</li>
+        <li>Produtora: Bluepoint Games</li>
         <li>Idioma: Português</li>
-        <li>Data de Lançamento: 30/04/2021</li>
+        <li>Data de Lançamento: 12/11/2020</li>
       </ul>
     </div>
   </div>
@@ -321,7 +321,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Returnal.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Demons Souls.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);

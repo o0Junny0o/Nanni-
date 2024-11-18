@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Returnal - Nanni?</title>
+  <title>Red Dead Redemption II - Nanni?!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
@@ -190,22 +190,22 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="/PS5/PS5.html">PS5</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Returnal</li>
+        <li class="breadcrumb-item"><a href="/PS4/PS4.html">PS4</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Red Dead Redemption II</li>
       </ol>
     </nav>
 
     <div class="game-details">
       <div class="game-cover">
-        <img src="/IMGS - JOGOS/Capa - Returnal.jpg" alt="Capa Returnal">
+        <img src="/IMGS - JOGOS/Capa - Red Dead Redemption II.jpeg" alt="Capa Red Dead Redemption II">
       </div>
       <div class="game-info">
-        <h2>Returnal</h2>
-        <p>Desenvolvedora: Housemarque</p>
+        <h2>Red Dead Redemption II</h2>
+        <p>Desenvolvedora: Rockstar Games</p>
         <div class="license-options">
           <p>Tipo de Licença:</p>
-          <button class="btn" id="primaria" onclick="mostrarDetalhes('primaria')">PS5 Primária</button>
-          <button class="btn" id="secundaria" onclick="mostrarDetalhes('secundaria')">PS5 Secundária</button>
+          <button class="btn" id="primaria" onclick="mostrarDetalhes('primaria')">PS4 Primária</button>
+          <button class="btn" id="secundaria" onclick="mostrarDetalhes('secundaria')">PS4 Secundária</button>
           <button class="btn" id="aluguel" onclick="mostrarDetalhes('aluguel')">Aluguel 10 + 1 dias - Secundária</button>
         </div>
         <div id="detalhes-pagamento" class="detalhes-pagamento">
@@ -213,9 +213,9 @@
           <div>Até 3x de R$ 6,66 sem juros ou R$ 18,99 via Pix</div>
         </div>
         <div class="wishlist">
-          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'Returnal', nome: 'Returnal', imagem: './IMGS - JOGOS/Capa - Returnal.jpg', link: './Games/Returnal.html'})">
+          <img src="/IMGS - ICONES/Lista_Desejos.png" alt="Adicionar à Lista de Desejos" onclick="adicionarÀListaDeDesejos({id: 'RDR2', nome: 'Red Dead Redemption II', imagem: '/IMGS - JOGOS/Capa - Red Dead Redemption II.jpg', link: '/Games/Red Dead Redemption II.html'})">
         </div>
-        <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="RETURNAL" data-nome="Returnal" data-tipo="" data-preco="">Comprar</button>
+        <button id="btn-compra" class="btn btn-compra" disabled onclick="comprarJogo()" data-id="RED_DEAD_REDEMPTION_II" data-nome="Red Dead Redemption II" data-tipo="" data-preco="">Comprar</button>
       </div>
     </div>
 
@@ -223,22 +223,24 @@
 
     <!-- Banner do Game -->
     <div class="game-banner">
-      <img src="/Banners/Banner Returnal.webp" alt="Banner Returnal">
+      <img src="/Banners/Banner RDRII.webp" alt="Banner Red Dead Redemption II">
     </div>
 
     <!-- Detalhes do Produto -->
     <div class="product-details">
       <h3>Detalhes do Produto</h3>
-      <h5>SOBRE RETURNAL</h5>
-      <p>Em Returnal, lute pela sobrevivência em um planeta hostil enquanto enfrenta inimigos brutais e ambientes em constante mudança. Com um sistema de combate rápido e imprevisível, a cada morte você volta ao início, em uma experiência roguelike desafiadora.</p>
+      <h5>SOBRE RED DEAD REDEMPTION II</h5>
+      <p>Estados Unidos, 1899. O fim da era do velho oeste começou, e as autoridades estão caçando as últimas gangues de fora da lei que restam. Os que não se rendem, nem sucumbem, são mortos.
+
+      Depois de tudo dar errado durante um roubo em uma cidade do oeste chamada Blackwater, Arthur Morgan e a gangue Van der Linde são forçados a fugir. Com agentes federais e os melhores caçadores de recompensas no seu encalço, a gangue precisa roubar, assaltar e lutar para sobreviver no impiedoso coração dos Estados Unidos. Conforme divisões internas profundas ameaçam despedaçar a gangue, Arthur deve fazer uma escolha entre os seus próprios ideais e a lealdade à gangue que o criou.</p>
 
       <h4>ESPECIFICAÇÕES TÉCNICAS:</h4>
       <ul>
-        <li>Plataforma: Playstation 5</li>
-        <li>Gênero: Ação/Roguelike</li>
-        <li>Produtora: Housemarque</li>
+        <li>Plataforma: Playstation 4</li>
+        <li>Gênero: Aventura, Ação</li>
+        <li>Produtora: Rockstar Games</li>
         <li>Idioma: Português</li>
-        <li>Data de Lançamento: 30/04/2021</li>
+        <li>Data de Lançamento: 26/10/2018</li>
       </ul>
     </div>
   </div>
@@ -272,7 +274,7 @@
       })
       .catch(error => console.error(error));
 
-      const detalhesLicenca = {
+    const detalhesLicenca = {
       primaria: {
         price: 'R$ 99,99',
         installments: 'Até 3x de R$ 33,33 sem juros ou R$ 98,99 via Pix'
@@ -311,7 +313,7 @@
   }
 }
 
-    function adicionarÀListaDeDesejos(jogo) {
+      function adicionarÀListaDeDesejos(jogo) {
       const listaDesejos = JSON.parse(localStorage.getItem('wishlist')) || [];
 
       // Verifica se o jogo já está na lista de desejos
@@ -321,7 +323,7 @@
         alert(`${jogo.nome} já está na sua lista de desejos!`);
       } else {
         // Adicionando o link da página de compra ao objeto 'jogo'
-        jogo.comprarLink = './Games/Returnal.html'; // Altere para o link de compra correto
+        jogo.comprarLink = './Games/Red Dead Redemption II.html'; // Altere para o link de compra correto
         listaDesejos.push(jogo);
         localStorage.setItem('wishlist', JSON.stringify(listaDesejos));
         alert(`${jogo.nome} adicionado à lista de desejos!`);
@@ -336,20 +338,9 @@
   const jogoPreco = btnCompra.dataset.preco;
 
   if (selectedLicenseType) {
-    // Verifica se o jogo já está no carrinho
-    if (verificarDuplicidade(jogoNome)) {
-      alert(`${jogoNome} já está no carrinho!`);
-    } else {
-      // Redireciona para a página do carrinho, passando os dados
-      window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
-    }
+    // Redireciona para a página do carrinho, passando os dados
+    window.location.href = `/carrinho.html?id=${jogoId}&nome=${encodeURIComponent(jogoNome)}&tipo=${selectedLicenseType}&preco=${encodeURIComponent(jogoPreco)}`;
   }
-}
-
-// Função para verificar se o produto já está no carrinho
-function verificarDuplicidade(nome) {
-  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  return carrinho.some(item => item.nome === nome);
 }
 
   </script>
