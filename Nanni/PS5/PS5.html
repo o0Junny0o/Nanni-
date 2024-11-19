@@ -158,7 +158,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="jogo-item">
-                        <img src="/IMGS - JOGOS/Capa - FC 24.png" alt="Capa Jogo 1">
+                        <img src="./IMGS - JOGOS/Capa - FC 24.png" alt="Capa Jogo 1">
                         <h3>EA SPORTS FC 24</h3>
                         <p>Plataforma: PS5</p>
                         <div class="preco">
@@ -167,12 +167,12 @@
                             <span>ou R$ 18,99 via Pix</span>
                         </div>
                         <button class="btn btn-primary btn-acessar"
-                            onclick="window.location.href='/Games/EA SPORTS FC 24.html'">Acessar</button>
+                            onclick="window.location.href='./Games/EA SPORTS FC 24.html'">Acessar</button>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="jogo-item">
-                        <img src="/IMGS - JOGOS/Capa - Spiderman Miles Morales.jpg" alt="Capa Jogo 2">
+                        <img src="./IMGS - JOGOS/Capa - Spiderman Miles Morales.jpg" alt="Capa Jogo 2">
                         <h3>Spiderman Miles Morales</h3>
                         <p>Plataforma: PS5</p>
                         <div class="preco">
@@ -181,12 +181,12 @@
                             <span>ou R$ 18,99 via Pix</span>
                         </div>
                         <button class="btn btn-primary btn-acessar"
-                            onclick="window.location.href='/Games/Spider Man Miles Morales.html'">Acessar</button>
+                            onclick="window.location.href='./Games/Spider Man Miles Morales.html'">Acessar</button>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="jogo-item">
-                        <img src="/IMGS - JOGOS/Capa - Returnal.jpg" alt="Capa Jogo 3">
+                        <img src="./IMGS - JOGOS/Capa - Returnal.jpg" alt="Capa Jogo 3">
                         <h3>Returnal</h3>
                         <p>Plataforma: PS5</p>
                         <div class="preco">
@@ -195,12 +195,12 @@
                             <span>ou R$ 18,99 via Pix</span>
                         </div>
                         <button class="btn btn-primary btn-acessar"
-                            onclick="window.location.href='/Games/Returnal.html'">Acessar</button>
+                            onclick="window.location.href='./Games/Returnal.html'">Acessar</button>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="jogo-item">
-                        <img src="/IMGS - JOGOS/Capa - Ratchet & clank rift apart.jpg" alt="Capa Jogo 4">
+                        <img src="./IMGS - JOGOS/Capa - Ratchet & clank rift apart.jpg" alt="Capa Jogo 4">
                         <h3>Ratchet & Clank Rift Apart</h3>
                         <p>Plataforma: PS5</p>
                         <div class="preco">
@@ -209,7 +209,7 @@
                             <span>ou R$ 18,99 via Pix</span>
                         </div>
                         <button class="btn btn-primary btn-acessar"
-                            onclick="window.location.href='/Games/Ratchet & Clank Rift Apart.html'">Acessar</button>
+                            onclick="window.location.href='./Games/Ratchet & Clank Rift Apart.html'">Acessar</button>
                     </div>
                 </div>
             </div>
@@ -220,14 +220,14 @@
 
     <script>
         // Carregar o header
-        fetch('/Header.html')
+        fetch('./Header.html')
           .then(response => response.text())
           .then(data => {
             document.getElementById('header').innerHTML = data;
           });
     
         // Carregar o footer
-        fetch('/Footer.html')
+        fetch('./Footer.html')
           .then(response => response.text())
           .then(data => {
             document.getElementById('footer').innerHTML = data;

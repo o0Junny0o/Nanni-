@@ -71,7 +71,7 @@
 
   <script>
     // Carregar o header
-    fetch('/Header.html')
+    fetch('./Header.html')
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao carregar o header');
@@ -84,7 +84,7 @@
       .catch(error => console.error(error));
 
     // Carregar o footer
-    fetch('/Footer.html')
+    fetch('./Footer.html')
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao carregar o footer');
