@@ -1,0 +1,35 @@
+body {
+    background-color: #f8f9fa;
+    color: #000;
+  }
+
+  .navbar {
+    background-color: #1a237e;
+  }
+
+  .navbar-brand,
+  .nav-link {
+    color: #fff !important;
+  }
+
+  .container {
+    margin-top: 20px;
+  }
+
+  .highlight-price {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  footer {
+    background-color: #1a237e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+
+  .btn-excluir {
+    background-color: #dc3545;
+    color: #fff;
+  }

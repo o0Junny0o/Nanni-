@@ -1,0 +1,83 @@
+body {
+    background-color: #f8f9fa;
+    color: #000;
+  }
+
+  .navbar {
+    background-color: #1a237e;
+  }
+
+  .navbar-brand img {
+    width: 160px;
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  .navbar-brand,
+  .nav-link,
+  .btn-outline-light {
+    color: #fff !important;
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: white;
+  }
+
+  .container {
+    margin-top: 20px;
+  }
+
+  .wishlist-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  .wishlist-item img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 20px;
+  }
+
+  .wishlist-item h5 {
+    margin: 0;
+  }
+
+  .btn-remove {
+    margin-left: auto;
+    background-color: #e57373;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .btn-remove:hover {
+    background-color: #ef5350;
+  }
+
+  .btn-buy {
+    margin-right: 10px;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .btn-buy:hover {
+    background-color: #66bb6a;
+  }
+
+  footer {
+    background-color: #1a237e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
