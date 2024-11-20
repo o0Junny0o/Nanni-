@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
+    <title>Cadastrar Jogo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/cadastrarJogo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Keania+One&family=Nova+Square&family=Rubik+Iso&display=swap" rel="stylesheet">
@@ -47,11 +47,25 @@
 </nav>
 
     <form class="bloco_login" method="post">
-        <h1 style="font-family: Nova Square;">Faça o Login</h1>
-        <input type="email" name="email" id="email" placeholder="E-mail" required>
-        <input type="password" name="senha" id="senha" placeholder="******" required>
+      <h1 style="font-family: Nova Square;">Cadastrar seu Jogo</h1>
+      <div>
+        <label for="email">Nome do jogo:</label><br>
+        <input type="text" name="nomeJogo" id="nomeJogo" placeholder="Nome do Jogo" required>
+      </div>
+      <div>
+        <label for="precoJogo">Preço do jogo:</label><br>
+        <input type="number" name="precoJogo" id="precoJogo" placeholder="Preço do jogo" required>
+      </div>
+      <div>
+        <label for="descricaoJogo">Descrição do jogo:</label><br>
+        <textarea type="text" name="descricaoJogo" id="descricaoJogo" placeholder="Descrição do jogo" required></textarea>
+      </div>
+      <div>
+        <label for="imagemDestaque">Imagem destaque:</label><br>
+        <input type="file" accept=".jpg,.jpeg,.png" style="background-color: rgba(0, 0, 0, 0.466);" required>
+      </div>
 
-        <button type="submit" id="bt_entrar">Entrar</button>
+        <button type="submit" id="bt_entrar">Cadastrar Jogo</button>
     </form>
 
     <div id="footer"></div>
