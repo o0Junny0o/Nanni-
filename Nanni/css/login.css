@@ -1,0 +1,31 @@
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+.navbar {
+  background-color: #1a237e;
+}
+
+.navbar-brand img {
+  width: 160px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.navbar-brand,
+.nav-link,
+.btn-outline-light {
+  color: #fff !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+footer {
+  background-color: #1a237e;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
