@@ -37,7 +37,7 @@
           <a class="nav-link" href="./Login.html">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./Lista_de_Desejos.html"> <!-- Corrigido para a raiz -->
+          <a class="nav-link" href="./listaDesejos.html"> <!-- Corrigido para a raiz -->
             <img src="./imgIcones/Lista_Desejos.png" alt="Lista de Desejos" style="width: 20px;">
           </a>
         </li>
@@ -75,7 +75,50 @@
 
     <div id="footer"></div>
   
-    <script src="script.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCocKCDWYZ6mwrXHI2cqsPcFhCW5TGz8fg",
+        authDomain: "nanni-74a09.firebaseapp.com",
+        projectId: "nanni-74a09",
+        storageBucket: "nanni-74a09.firebasestorage.app",
+        messagingSenderId: "706057791985",
+        appId: "1:706057791985:web:d4078557d5af8d329a3c50"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      const form = document.getElementById('formJogo');
+      form.addEventListener('submit', async (event) =>{
+      event.preventDefault();
+
+      const nomeJogo = document.getElementById('nomeJogo').value;
+      const precoJogo = document.getElementById('precoJogo').value;
+      const descricaoJogo = document.getElementById('descricaoJogo').value;
+
+      try{
+          const docRef = await addDoc(collection(db, "jogos"), {
+          nomeJogo: nomeJogo,
+          precoJogo: precoJogo,
+          descricaoJogo: descricaoJogo
+          });
+          alert(`Jogo cadastrado com sucesso! Id do jogo: ${docRef.id}`);
+          formJogo.reset();
+      }catch(e){
+          console.error(`Erro ao cadastrar jogo: ${e}`);
+          alert("Erro ao cadastrar jogo!");
+      }
+      });
+
+    </script>
     <script>
         // Carregar o footer
         fetch('./Footer.html')
