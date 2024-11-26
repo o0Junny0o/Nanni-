@@ -83,6 +83,7 @@ body {
   }
 
   #carouselJogos .carousel-item img {
+    weight: 1200px;
     height: 400px;
   }
 
