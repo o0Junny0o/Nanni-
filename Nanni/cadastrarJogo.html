@@ -37,6 +37,9 @@
           <a class="nav-link" href="./Login.html">Login</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="./Cadastro.html">Cadastre-se</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="./listaDesejos.html"> <!-- Corrigido para a raiz -->
             <img src="./imgIcones/Lista_Desejos.png" alt="Lista de Desejos" style="width: 20px;">
           </a>
@@ -61,6 +64,26 @@
       <div>
         <label for="nomeJogo">Nome do jogo:</label><br>
         <input type="text" name="nomeJogo" id="nomeJogo" placeholder="Nome do Jogo" required>
+      </div>
+      <div>
+        <label for="consoleJogo">Console:</label><br>
+        <div id="console">
+          <label>
+            <input type="radio" name="console" value="ps4">PS4
+          </label>
+          <label>
+            <input type="radio" name="console" value="xbox_one">Xbox One
+          </label>
+          <label>
+            <input type="radio" name="console" value="nitendo_switch">Nintendo Switch
+          </label>
+          <label>
+            <input type="radio" name="console" value="ps5">PS5
+          </label>
+          <label>
+            <input type="radio" name="console" value="xbox_series">Xbox Series
+          </label>
+        </div>
       </div>
       <div>
         <label for="precoJogo">Preço do jogo:</label><br>
@@ -101,12 +124,14 @@
       event.preventDefault();
 
       const nomeJogo = document.getElementById('nomeJogo').value;
+      const consoleJogo = document.querySelector('input[name="console"]:checked').value;
       const precoJogo = document.getElementById('precoJogo').value;
       const descricaoJogo = document.getElementById('descricaoJogo').value;
 
       try{
           const docRef = await addDoc(collection(db, "jogos"), {
           nomeJogo: nomeJogo,
+          consoleJogo: consoleJogo,
           precoJogo: precoJogo,
           descricaoJogo: descricaoJogo
           });

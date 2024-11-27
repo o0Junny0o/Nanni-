@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faça o Login</title>
+    <title>Faça seu Cadastro</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/cadastro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Keania+One&family=Nova+Square&family=Rubik+Iso&display=swap" rel="stylesheet">
@@ -49,18 +49,18 @@
   </div>
 </nav>
 
-    <form id="formLogin" class="bloco_login" method="post">
-        <h1 style="font-family: Nova Square;">Faça o Login</h1>
+    <form id="formCadastro" class="bloco_cadastro" method="post">
+        <h1 style="font-family: Nova Square;">Faça seu Cadastro</h1>
         <input type="email" name="email" id="email" placeholder="E-mail" required>
         <input type="password" name="senha" id="senha" placeholder="******" required>
-        <input type="submit" value="Entrar">
+        <input type="submit" value="Cadastre-se">
     </form>
 
     <div id="footer"></div>
 
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+      import { getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
       // Configuração do Firebase
       const firebaseConfig = {
@@ -76,21 +76,22 @@
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
 
-      const formLogin = document.getElementById('formLogin');
-        formLogin.addEventListener('submit', async(event) =>{
+      const formCadastro = document.getElementById('formCadastro');
+        formCadastro.addEventListener('submit', async(event) =>{
         event.preventDefault();
 
         const email = document.getElementById("email").value;
         const senha = document.getElementById("senha").value;
 
         try {
-          const usuario = await signInWithEmailAndPassword(auth, email, senha);
+          const usuario = await createUserWithEmailAndPassword(auth, email, senha);
           const user = usuario.user;
 
+          alert(`Cadastro realizado com sucesso! Bem-vindo, ${user.email}`);
           window.location.href="./index.html";
         } catch (error) {
-          console.error(`Erro ao fazer login: ${error}`);
-          alert(`Erro ao fazer login: ${error.message}`);
+          console.error(`Erro ao fazer cadastro: ${error}`);
+          alert(`Erro ao fazer cadastro: ${error.message}`);
         }
       });
     </script>
