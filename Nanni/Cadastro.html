@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Keania+One&family=Nova+Square&family=Rubik+Iso&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- header.html -->
+<!-- Header -->
 <nav class="navbar navbar-expand-lg navbar-dark" style="border-bottom: 1px solid rgba(173, 216, 230, 0.281);">
   <div class="container">
     <a class="navbar-brand" href="./index.html">
@@ -23,85 +23,155 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="./Login.html">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./Cadastro.html">Cadastre-se</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./listaDesejos.html"> <!-- Corrigido para a raiz -->
-            <img src="imgIcones/Lista_Desejos.png" alt="Lista de Desejos" style="width: 20px;">
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./Carrinho.html"> <!-- Adicione uma barra inicial se Carrinho também estiver na raiz -->
-            <img src="imgIcones/carrinho-branco3.png" alt="Carrinho" style="width: 20px;">
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./cadastrarJogo.html"> <!-- Adicione uma barra inicial se Carrinho também estiver na raiz -->
-            <img src="imgIcones/cloudup_icon.png" alt="CadastrarJogo" style="width: 20px;">
-          </a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="./Login.html">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="./Cadastro.html">Cadastre-se</a></li>
+        <li class="nav-item"><a class="nav-link" href="./listaDesejos.html"><img src="imgIcones/Lista_Desejos.png" alt="Lista de Desejos" style="width: 20px;"></a></li>
+        <li class="nav-item"><a class="nav-link" href="./Carrinho.html"><img src="imgIcones/carrinho-branco3.png" alt="Carrinho" style="width: 20px;"></a></li>
+        <li class="nav-item"><a class="nav-link" href="./cadastrarJogo.html"><img src="imgIcones/cloudup_icon.png" alt="CadastrarJogo" style="width: 20px;"></a></li>
       </ul>
     </div>
   </div>
 </nav>
 
+<!-- Cadastro -->
+<div class="container mt-5">
     <form id="formCadastro" class="bloco_cadastro" method="post">
-        <h1 style="font-family: Nova Square;">Faça seu Cadastro</h1>
-        <input type="email" name="email" id="email" placeholder="E-mail" required>
-        <input type="password" name="senha" id="senha" placeholder="******" required>
-        <input type="submit" value="Cadastre-se">
+        <h1 style="font-family: 'Nova Square';">Faça seu Cadastro</h1>
+        
+        <select name="tipoUsuario" id="tipoUsuario" class="form-control mb-3" required>
+          <option value="" selected disabled>Selecione o tipo de usuário</option>
+          <option value="cliente">Cliente</option>
+          <option value="desenvolvedor">Desenvolvedor Independente</option>
+        </select>
+
+        <input type="text" name="nome" id="nome" class="form-control mb-3" placeholder="Nome" required>
+        <input type="email" name="email" id="email" class="form-control mb-3" placeholder="E-mail" required>
+        <input type="password" name="senha" id="senha" class="form-control mb-3" placeholder="Senha" required>
+
+        <div id="loading" style="display: none;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Carregando...</span>
+            </div>
+        </div>
+
+        <!-- Area de mensagens -->
+        <div id="message" class="mb-3" style="display: none;">
+            <div class="alert alert-danger" id="errorMessage"></div>
+            <div class="alert alert-success" id="successMessage"></div>
+        </div>
+
+        <input type="submit" class="btn btn-primary btn-block" value="Cadastre-se" id="submitBtn">
     </form>
+</div>
 
-    <div id="footer"></div>
+<!-- Footer -->
+<div id="footer"></div>
 
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-      import { getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+<!-- Scripts -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-      // Configuração do Firebase
-      const firebaseConfig = {
+    const firebaseConfig = {
         apiKey: "AIzaSyCocKCDWYZ6mwrXHI2cqsPcFhCW5TGz8fg",
         authDomain: "nanni-74a09.firebaseapp.com",
         projectId: "nanni-74a09",
         storageBucket: "nanni-74a09.firebasestorage.app",
         messagingSenderId: "706057791985",
         appId: "1:706057791985:web:d4078557d5af8d329a3c50"
-      };
+    };
 
-      // Inicializando o Firebase
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
 
-      const formCadastro = document.getElementById('formCadastro');
-        formCadastro.addEventListener('submit', async(event) =>{
+    const formCadastro = document.getElementById('formCadastro');
+    const submitBtn = document.getElementById('submitBtn');
+    const loading = document.getElementById('loading');
+    const messageArea = document.getElementById('message');
+    const errorMessage = document.getElementById('errorMessage');
+    const successMessage = document.getElementById('successMessage');
+
+    formCadastro.addEventListener('submit', async (event) => {
         event.preventDefault();
 
+        const tipoUsuario = document.getElementById("tipoUsuario").value;
+        const nome = document.getElementById("nome").value;
         const email = document.getElementById("email").value;
         const senha = document.getElementById("senha").value;
 
-        try {
-          const usuario = await createUserWithEmailAndPassword(auth, email, senha);
-          const user = usuario.user;
+        // Resetando mensagens de erro/sucesso
+        errorMessage.innerHTML = '';
+        successMessage.innerHTML = '';
+        messageArea.style.display = 'none';
 
-          alert(`Cadastro realizado com sucesso! Bem-vindo, ${user.email}`);
-          window.location.href="./index.html";
-        } catch (error) {
-          console.error(`Erro ao fazer cadastro: ${error}`);
-          alert(`Erro ao fazer cadastro: ${error.message}`);
+        if (!tipoUsuario) {
+            showMessage('error', 'Por favor, selecione o tipo de usuário.');
+            return;
         }
-      });
-    </script>
-    <script>
-        // Carregar o footer
-        fetch('./Footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer').innerHTML = data;
-        });
-    </script>
+
+        if (senha.length < 6) {
+            showMessage('error', 'A senha deve ter pelo menos 6 caracteres.');
+            return;
+        }
+
+        document.getElementById('loading').style.display = 'block'; // Exibe o spinner
+        submitBtn.disabled = true; // Desabilita o botão
+
+        try {
+            const usuario = await createUserWithEmailAndPassword(auth, email, senha);
+            const user = usuario.user;
+
+            const usuarioData = {
+                email: user.email,
+                nome: nome,
+                tipoUsuario: tipoUsuario,
+                criadoEm: new Date().toISOString(),
+            };
+
+            await setDoc(doc(db, "usuarios", user.uid), usuarioData);
+
+            showMessage('success', `Cadastro realizado com sucesso! Bem-vindo, ${user.email}`);
+            setTimeout(() => window.location.href = './index.html', 2000); // Redireciona após 2 segundos
+
+        } catch (error) {
+            let errorMessageText = "Erro desconhecido.";
+            switch (error.code) {
+                case 'auth/weak-password':
+                    errorMessageText = "A senha deve ter pelo menos 6 caracteres.";
+                    break;
+                case 'auth/email-already-in-use':
+                    errorMessageText = "Este e-mail já está em uso.";
+                    break;
+                case 'auth/invalid-email':
+                    errorMessageText = "O e-mail informado é inválido.";
+                    break;
+                default:
+                    errorMessageText = error.message;
+            }
+
+            showMessage('error', `Erro no cadastro: ${errorMessageText}`);
+        } finally {
+            document.getElementById('loading').style.display = 'none'; // Esconde o spinner
+            submitBtn.disabled = false; // Habilita o botão novamente
+        }
+    });
+
+    // Função para exibir mensagens
+    function showMessage(type, message) {
+        messageArea.style.display = 'block';
+        if (type === 'error') {
+            errorMessage.innerHTML = message;
+        } else if (type === 'success') {
+            successMessage.innerHTML = message;
+        }
+    }
+</script>
+
+<!-- Firebase e Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
