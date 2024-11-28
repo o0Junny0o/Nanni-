@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Jogo</title>
-    <!--Bootstrap-->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/cadastrarJogo.css">
 
-    <!--Google fonts-->
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Keania+One&family=Nova+Square&family=Rubik+Iso&display=swap" rel="stylesheet">
@@ -18,132 +18,155 @@
     <!-- FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-storage.js"></script>
 
 </head>
 <body>
-<!-- header.html -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="border-bottom: 1px solid rgba(173, 216, 230, 0.281);">
-  <div class="container">
-    <a class="navbar-brand" href="./index.html">
-      <img src="imgIcones/logo_nanni.svg" alt="Nanni Logo" style="width: 160px; height: 60px;">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="./Login.html">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./Cadastro.html">Cadastre-se</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./listaDesejos.html"> <!-- Corrigido para a raiz -->
-            <img src="./imgIcones/Lista_Desejos.png" alt="Lista de Desejos" style="width: 20px;">
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./Carrinho.html"> <!-- Adicione uma barra inicial se Carrinho também estiver na raiz -->
-            <img src="imgIcones/carrinho-branco3.png" alt="Carrinho" style="width: 20px;">
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./cadastrarJogo.html"> <!-- Adicione uma barra inicial se Carrinho também estiver na raiz -->
-            <img src="./imgIcones/cloudup_icon.png" alt="CadastrarJogo" style="width: 20px;">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- header.html -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="border-bottom: 1px solid rgba(173, 216, 230, 0.281);">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="imgIcones/logo_nanni.svg" alt="Nanni Logo" style="width: 160px; height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Cadastro.html">Cadastre-se</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./listaDesejos.html">
+                            <img src="./imgIcones/Lista_Desejos.png" alt="Lista de Desejos" style="width: 20px;">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Carrinho.html">
+                            <img src="imgIcones/carrinho-branco3.png" alt="Carrinho" style="width: 20px;">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cadastrarJogo.html">
+                            <img src="./imgIcones/cloudup_icon.png" alt="CadastrarJogo" style="width: 20px;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <form id="formJogo" class="bloco_login" method="post">
-      <h1 style="font-family: Nova Square;">Cadastrar seu Jogo</h1>
-      <div>
-        <label for="nomeJogo">Nome do jogo:</label><br>
-        <input type="text" name="nomeJogo" id="nomeJogo" placeholder="Nome do Jogo" required>
-      </div>
-      <div>
-        <label for="consoleJogo">Console:</label><br>
-        <div id="console">
-          <label>
-            <input type="radio" name="console" value="ps4">PS4
-          </label>
-          <label>
-            <input type="radio" name="console" value="xbox_one">Xbox One
-          </label>
-          <label>
-            <input type="radio" name="console" value="nitendo_switch">Nintendo Switch
-          </label>
-          <label>
-            <input type="radio" name="console" value="ps5">PS5
-          </label>
-          <label>
-            <input type="radio" name="console" value="xbox_series">Xbox Series
-          </label>
+        <h1 style="font-family: Nova Square;">Cadastrar seu Jogo</h1>
+        <div>
+            <label for="nomeJogo">Nome do jogo:</label><br>
+            <input type="text" name="nomeJogo" id="nomeJogo" placeholder="Nome do Jogo" required>
         </div>
-      </div>
-      <div>
-        <label for="precoJogo">Preço do jogo:</label><br>
-        <input type="number" name="precoJogo" id="precoJogo" placeholder="Preço do jogo" required>
-      </div>
-      <div>
-        <label for="descricaoJogo">Descrição do jogo:</label><br>
-        <textarea type="text" name="descricaoJogo" id="descricaoJogo" placeholder="Descrição do jogo" required></textarea>
-      </div>
+        <div>
+            <label for="consoleJogo">Console:</label><br>
+            <div id="console">
+                <label>
+                    <input type="radio" name="console" value="ps4">PS4
+                </label>
+                <label>
+                    <input type="radio" name="console" value="xbox_one">Xbox One
+                </label>
+                <label>
+                    <input type="radio" name="console" value="nitendo_switch">Nintendo Switch
+                </label>
+                <label>
+                    <input type="radio" name="console" value="ps5">PS5
+                </label>
+                <label>
+                    <input type="radio" name="console" value="xbox_series">Xbox Series
+                </label>
+            </div>
+        </div>
+        <div>
+            <label for="precoJogo">Preço do jogo:</label><br>
+            <input type="number" name="precoJogo" id="precoJogo" placeholder="Preço do jogo" required>
+        </div>
+        <div>
+            <label for="descricaoJogo">Descrição do jogo:</label><br>
+            <textarea type="text" name="descricaoJogo" id="descricaoJogo" placeholder="Descrição do jogo" required></textarea>
+        </div>
+        <div>
+            <label for="capaJogo">Capa do Jogo:</label><br>
+            <input type="file" name="capaJogo" id="capaJogo" accept="image/*" required>
+        </div>
         <input type="submit" value="Cadastrar Jogo">
     </form>
 
     <div id="footer"></div>
-  
+
     <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-      import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+        // Importar funções do Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-storage.js";
 
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyCocKCDWYZ6mwrXHI2cqsPcFhCW5TGz8fg",
-        authDomain: "nanni-74a09.firebaseapp.com",
-        projectId: "nanni-74a09",
-        storageBucket: "nanni-74a09.firebasestorage.app",
-        messagingSenderId: "706057791985",
-        appId: "1:706057791985:web:d4078557d5af8d329a3c50"
-      };
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCocKCDWYZ6mwrXHI2cqsPcFhCW5TGz8fg",
+            authDomain: "nanni-74a09.firebaseapp.com",
+            projectId: "nanni-74a09",
+            storageBucket: "nanni-74a09.firebasestorage.app",
+            messagingSenderId: "706057791985",
+            appId: "1:706057791985:web:d4078557d5af8d329a3c50"
+        };
 
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const storage = getStorage(app);
 
-      const form = document.getElementById('formJogo');
-      form.addEventListener('submit', async (event) =>{
-      event.preventDefault();
+        const form = document.getElementById('formJogo');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
 
-      const nomeJogo = document.getElementById('nomeJogo').value;
-      const consoleJogo = document.querySelector('input[name="console"]:checked').value;
-      const precoJogo = document.getElementById('precoJogo').value;
-      const descricaoJogo = document.getElementById('descricaoJogo').value;
+            const nomeJogo = document.getElementById('nomeJogo').value;
+            const consoleJogo = document.querySelector('input[name="console"]:checked').value;
+            const precoJogo = document.getElementById('precoJogo').value;
+            const descricaoJogo = document.getElementById('descricaoJogo').value;
+            const capaJogoFile = document.getElementById('capaJogo').files[0];  // Obtém o arquivo de imagem da capa
 
-      try{
-          const docRef = await addDoc(collection(db, "jogos"), {
-          nomeJogo: nomeJogo,
-          consoleJogo: consoleJogo,
-          precoJogo: precoJogo,
-          descricaoJogo: descricaoJogo
-          });
-          alert(`Jogo cadastrado com sucesso! Id do jogo: ${docRef.id}`);
-          formJogo.reset();
-      }catch(e){
-          console.error(`Erro ao cadastrar jogo: ${e}`);
-          alert("Erro ao cadastrar jogo!");
-      }
-      });
+            if (capaJogoFile) {
+                try {
+                    // Cria uma referência para a pasta de capas no Firebase Storage
+                    const capaJogoRef = ref(storage, 'capas/' + capaJogoFile.name);
 
+                    // Envia o arquivo para o Firebase Storage
+                    const snapshot = await uploadBytes(capaJogoRef, capaJogoFile);
+                    console.log('Arquivo de capa enviado com sucesso:', snapshot);
+
+                    // Obtém a URL de download da imagem
+                    const downloadURL = await getDownloadURL(snapshot.ref);
+
+                    // Salva os dados do jogo no Firestore
+                    const docRef = await addDoc(collection(db, "jogos"), {
+                        nomeJogo: nomeJogo,
+                        consoleJogo: consoleJogo,
+                        precoJogo: precoJogo,
+                        descricaoJogo: descricaoJogo,
+                        capaJogoURL: downloadURL  // Salva a URL da imagem no Firestore
+                    });
+
+                    alert(`Jogo cadastrado com sucesso! Id do jogo: ${docRef.id}`);
+                    form.reset();  // Reseta o formulário após o envio
+                } catch (e) {
+                    console.error('Erro ao cadastrar jogo:', e);
+                    alert("Erro ao cadastrar jogo!");
+                }
+            } else {
+                alert("Por favor, selecione uma capa para o jogo.");
+            }
+        });
     </script>
+
     <script>
         // Carregar o footer
         fetch('./Footer.html')
