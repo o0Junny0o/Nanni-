@@ -21,6 +21,7 @@
     <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-storage.js"></script>
 
 </head>
+
 <body>
     <!-- Div onde o header será carregado -->
     <div id="header"></div>
@@ -124,6 +125,14 @@
     </script>
 
     <script>
+
+    // Carregar o header
+        fetch('./Header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+
         // Carregar o footer
         fetch('./Footer.html')
         .then(response => response.text())
