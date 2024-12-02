@@ -21,14 +21,6 @@ body {
     font-weight: bold;
   }
 
-  footer {
-    background-color: #5D90D6;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-  }
-
   .btn-excluir {
     background-color: #dc3545;
     color: #fff;
