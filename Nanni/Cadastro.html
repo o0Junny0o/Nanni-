@@ -167,6 +167,20 @@
             successMessage.innerHTML = message;
         }
     }
+
+    // Carregar o header
+    fetch('./Header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+    });
+
+    // Carregar o footer
+    fetch('./Footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    });
 </script>
 
 <!-- Firebase e Bootstrap -->
