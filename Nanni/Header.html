@@ -1,18 +1,32 @@
-<!-- header.html -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="border-bottom: 1px solid rgba(173, 216, 230, 0.281);">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href=".css/Header.css">
+</head>
+<body>
+  <header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="./index.html">
+    <div class="logo-container">
+      <a class="navbar-brand" href="./index.html">
       <img src="imgIcones/logo_nanni.svg" alt="Nanni Logo" style="width: 160px; height: 60px;">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+      </button>
+    </div>
+    
+    <div class="barra-de-busca-container">
+        <input class="barra-de-busca-input" type="search" placeholder="Buscar jogos" aria-label="Buscar">
+        <a class="barra-de-busca-button" type="submit">
+          <img src="./imgIcones/buscar-button.svg" alt="Buscar">
+        </a>
+    </div>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <form class="form-inline mx-auto">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar jogos" aria-label="Buscar">
-        <button class="btn btn-outline-dark" type="submit" style="background-color: lightblue;">Buscar</button>
-      </form>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="Login.html">Login</a>
@@ -38,4 +52,9 @@
       </ul>
     </div>
   </div>
-</nav>
+  </nav>
+  </header>
+  
+</body>
+</html>
+<!-- header.html -->

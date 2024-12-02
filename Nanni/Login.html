@@ -1,106 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faça o Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Keania+One&family=Nova+Square&family=Rubik+Iso&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faça o Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Keania+One&family=Nova+Square&family=Rubik+Iso&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-<!-- header.html -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="border-bottom: 1px solid rgba(173, 216, 230, 0.281);">
-  <div class="container">
-    <a class="navbar-brand" href="./index.html">
-      <img src="imgIcones/logo_nanni.svg" alt="Nanni Logo" style="width: 160px; height: 60px;">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="./Login.html">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./Cadastro.html">Cadastre-se</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./listaDesejos.html"> <!-- Corrigido para a raiz -->
-            <img src="imgIcones/Lista_Desejos.png" alt="Lista de Desejos" style="width: 20px;">
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./Carrinho.html"> <!-- Adicione uma barra inicial se Carrinho também estiver na raiz -->
-            <img src="imgIcones/carrinho-branco3.png" alt="Carrinho" style="width: 20px;">
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./cadastrarJogo.html"> <!-- Adicione uma barra inicial se Carrinho também estiver na raiz -->
-            <img src="imgIcones/cloudup_icon.png" alt="CadastrarJogo" style="width: 20px;">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <!-- header.html -->
+  <div id="header"></div>
 
-    <form id="formLogin" class="bloco_login" method="post">
-        <h1 style="font-family: Nova Square;">Faça o Login</h1>
-        <input type="email" name="email" id="email" placeholder="E-mail" required>
-        <input type="password" name="senha" id="senha" placeholder="******" required>
-        <input type="submit" value="Entrar">
-    </form>
+  <form id="formLogin" class="bloco_login" method="post">
+    <h1 style="font-family: Nova Square;">Faça o Login</h1>
+    <input type="email" name="email" id="email" placeholder="E-mail" required>
+    <input type="password" name="senha" id="senha" placeholder="******" required>
+    <input type="submit" value="Entrar">
+  </form>
 
-    <div id="footer"></div>
+  <div id="footer"></div>
 
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
-      // Configuração do Firebase
-      const firebaseConfig = {
-        apiKey: "AIzaSyCocKCDWYZ6mwrXHI2cqsPcFhCW5TGz8fg",
-        authDomain: "nanni-74a09.firebaseapp.com",
-        projectId: "nanni-74a09",
-        storageBucket: "nanni-74a09.firebasestorage.app",
-        messagingSenderId: "706057791985",
-        appId: "1:706057791985:web:d4078557d5af8d329a3c50"
-      };
+    // Configuração do Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyCocKCDWYZ6mwrXHI2cqsPcFhCW5TGz8fg",
+      authDomain: "nanni-74a09.firebaseapp.com",
+      projectId: "nanni-74a09",
+      storageBucket: "nanni-74a09.firebasestorage.app",
+      messagingSenderId: "706057791985",
+      appId: "1:706057791985:web:d4078557d5af8d329a3c50"
+    };
 
-      // Inicializando o Firebase
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
+    // Inicializando o Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-      const formLogin = document.getElementById('formLogin');
-        formLogin.addEventListener('submit', async(event) =>{
-        event.preventDefault();
+    const formLogin = document.getElementById('formLogin');
+    formLogin.addEventListener('submit', async (event) => {
+      event.preventDefault();
 
-        const email = document.getElementById("email").value;
-        const senha = document.getElementById("senha").value;
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
 
-        try {
-          const usuario = await signInWithEmailAndPassword(auth, email, senha);
-          const user = usuario.user;
+      try {
+        const usuario = await signInWithEmailAndPassword(auth, email, senha);
+        const user = usuario.user;
 
-          window.location.href="./index.html";
-        } catch (error) {
-          console.error(`Erro ao fazer login: ${error}`);
-          alert(`Erro ao fazer login: ${error.message}`);
-        }
+        window.location.href = "./index.html";
+      } catch (error) {
+        console.error(`Erro ao fazer login: ${error}`);
+        alert(`Erro ao fazer login: ${error.message}`);
+      }
+    });
+  </script>
+  <script>
+    // Carregar o header
+    fetch('./Header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
       });
-    </script>
-    <script>
-        // Carregar o footer
-        fetch('./Footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer').innerHTML = data;
-        });
-    </script>
+
+    // Carregar o footer
+    fetch('./Footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
 </body>
+
 </html>
