@@ -4,4 +4,9 @@ footer{
     text-align: center;
     margin-top: 15px;
     padding: 20px 0;
+
+    /* Mantem o footer no fim da TELA*/
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
